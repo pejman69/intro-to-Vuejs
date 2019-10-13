@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>vue-project</title>
-    <link rel="stylesheet" type="text/css" href="src/style.css">
-  </head>
-  <body>
 
-    <div class="nav-bar"></div>
+<head>
+  <meta charset="utf-8">
+  <title>vue-project</title>
+  <link rel="stylesheet" type="text/css" href="src/style.css">
+</head>
 
-    <div id="app">
-      <product :premium="premium"></product>
+<body>
 
+  <div class="nav-bar"></div>
+
+  <div id="app">
+    <div class="cart">
+      <p>cart({{ cart.length }})</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="/dist/build.js"></script>
-  </body>
+
+    <product :premium="premium" @add-to-cart="updateCart"></product>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/dist/build.js"></script>
+</body>
+
 </html>
